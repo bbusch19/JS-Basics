@@ -32,7 +32,9 @@ var callFriend = function(){
 //Above you're given a callFriend function that returns another function.
 //Do what you need to do in order to call your function and get 'Calling Jake at 435-215-9248' in your console.
 
-  //Code Here
+var jake = callFriend();
+var callJake = jake('435-215-9248');
+
 
 
 
@@ -44,7 +46,14 @@ var callFriend = function(){
   Write a function called makeCounter that makes the following code work properly.
 */
 
-  //Code Here
+  var makeCounter = function() {
+      var returnMe = 0;
+    function add() {
+      returnMe++;
+      return returnMe;
+    }
+    return add;
+  }
   var count = makeCounter();
   count(); // 1
   count(); // 2
