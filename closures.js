@@ -70,7 +70,22 @@ var callJake = jake('435-215-9248');
   Write a function named codeLove that returns the string 'I love code'. Write a second function named codeFriend that accepts the first function as it's first parameter. The second function should return a new third function. Store the third function in a variable, codeEcho which, when invoked, invokes the first, original function that was passed in, but will only ever do so once (returns null after first invocation).
 */
 
-  //Code Here
+  function codeLove() {
+    return "I love code";
+  }
+  function codeFriend(codeLove) {
+    var i = 0;
+    function thirdFunc() {
+        i++;
+        if (i === 1) {
+          return codeLove();
+        } else {
+          return null;
+        }
+    }
+    return thirdFunc;
+  }
+  var codeEcho = codeFriend(codeLove);
 
 
 
@@ -84,7 +99,17 @@ var callJake = jake('435-215-9248');
 
 
 
-//Next Problem
+function fnCounter(anonymous, N) {
+  var i = 1;
+  return function() {
+    if (i <= N) {
+      i++;
+      return anonymous();
+    } else {
+      return 'STOP';
+    }
+  }
+}
 
 
 
