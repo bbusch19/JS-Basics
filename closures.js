@@ -156,7 +156,7 @@ function createClosure(n) {
          console.log(n);
    }
 }
-for (var i = 0; i < 10; i++) {
+for (var i = 0; i < 6; i++) {
     funcArray[i] = createClosure(i);
 }
 
